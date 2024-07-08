@@ -1,12 +1,24 @@
 package com.employee.demo.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Employee {
 	@Id
+	private Long id;
 	private String empName;
 	private String department;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getEmpName() {
 		return empName;
 	}
@@ -21,8 +33,11 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-		return "Employee [empName=" + empName + ", department=" + department + "]";
+		return "Employee [id=" + id + ", empName=" + empName + ", department=" + department + "]";
 	}
+	
+	
+	
 	
 	
 
